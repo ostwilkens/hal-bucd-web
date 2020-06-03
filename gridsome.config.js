@@ -6,7 +6,8 @@
 
 module.exports = {
   siteName: 'hal_bucd',
-  siteUrl: 'https://hal-bucd.net',
+  siteUrl: 'https://ostwilkens.github.io/hal-bucd-web',
+  pathPrefix: 'hal-bucd-web',
   siteDescription: 'sentri est',
 
   templates: {

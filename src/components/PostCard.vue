@@ -11,9 +11,6 @@
     <div class="post-card__content">
       <h2 class="post-card__title" v-html="post.title" />
       <p class="post-card__description" v-html="post.description" />
-
-      <PostMeta class="post-card__meta" :post="post" />
-
       <g-link class="post-card__link" :to="post.path">Link</g-link>
     </div>
   </div>
@@ -39,7 +36,7 @@ export default {
   &__header {
     margin-left: calc(var(--space) * -1);
     margin-right: calc(var(--space) * -1);
-    margin-bottom: calc(var(--space) / 2);
+    margin-bottom: calc(var(--space) * 0.75);
     margin-top: calc(var(--space) * -1);
     overflow: hidden;
     border-radius: var(--radius) var(--radius) 0 0;
@@ -73,6 +70,10 @@ export default {
     overflow: hidden;
     text-indent: -9999px;
     z-index: 0;
+  }
+
+  &__description {
+    margin-bottom: 0;
   }
 }
 </style>
