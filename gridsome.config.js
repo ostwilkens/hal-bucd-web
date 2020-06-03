@@ -22,14 +22,6 @@ module.exports = {
         typeName: 'Post',
         path: 'content/posts/*.md'
       }
-    },
-    {
-      // Create members from yaml files
-      use: '@gridsome/source-filesystem',
-      options: {
-        typeName: 'Member',
-        path: 'content/members/*.yaml',
-      }
     }
   ],
 

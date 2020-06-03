@@ -13,3 +13,7 @@
 `gridsome develop` to start local dev server at `http://localhost:8080`
 
 Happy coding 🎉🙌
+
+### 3. Lorem ipsum generator
+
+`http://fillerama.io/`

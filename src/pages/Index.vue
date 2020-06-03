@@ -22,17 +22,6 @@ query {
         path
       }
     }
-  },
-  members: allMember(sortBy: "order", order: ASC) {
-    edges {
-      node {
-        id
-        name,
-        profile_image (width: 194, height: 194, blur: 10, quality: 80),
-        skills,
-        order
-      }
-    }
   }
 }
 </page-query>
@@ -40,27 +29,14 @@ query {
 <script>
 import Title from "~/components/Title.vue";
 import PostCard from "~/components/PostCard.vue";
-import Member from "~/components/Member.vue";
 
 export default {
   components: {
     Title,
-    PostCard,
-    Member
+    PostCard
   },
   metaInfo: {
     title: "Init"
   }
 };
 </script>
-
-<style lang="scss">
-.members {
-  margin-bottom: 5em;
-
-  @media screen and (min-width: 651px) {
-    display: flex;
-    justify-content: center;
-  }
-}
-</style>
