@@ -29,7 +29,7 @@ export default {
   padding: calc(var(--space) / 2) 0;
 
   &__image {
-    border-radius: 100%;
+    // border-radius: 100%;
     border: 3px solid var(--body-color);
     width: 160px;
     height: 160px;

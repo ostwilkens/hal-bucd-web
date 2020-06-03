@@ -4,10 +4,6 @@
       <div class="header__left">
         <Logo v-if="showLogo" />
       </div>
-
-      <div class="header__right">
-        <ToggleTheme />
-      </div>
     </header>
 
     <main class="main">
@@ -53,6 +49,8 @@ export default {
   &__right {
     display: flex;
     align-items: center;
+    background: black;
+    padding: 10px;
   }
 
   @media screen and (min-width: 1300px) {

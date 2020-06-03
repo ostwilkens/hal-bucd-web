@@ -1,17 +1,26 @@
 <template>
-  <div class="post-card content-box" :class="{'post-card--has-poster' : post.poster}">
+  <div class="post-card content-box" :class="{'post-card--has-poster' : post.poster, 'post-card--has-content' : post.description}">
     <div class="post-card__header">
+      <iframe 
+        v-if="post.video_url"
+        width="100%" 
+        height="483" 
+        :src="'https://www.youtube-nocookie.com/embed/' + post.video_url + '?rel=0&amp;controls=1&amp&amp;showinfo=0&amp;modestbranding=0&amp;loop=1&amp;playlist=' + post.video_url" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
       <g-image
         alt="Cover image"
-        v-if="post.cover_image"
+        v-else-if="post.cover_image"
         class="post-card__image"
         :src="post.cover_image"
       />
     </div>
-    <div class="post-card__content">
-      <h2 class="post-card__title" v-html="post.title" />
+    <div class="post-card__content" v-if="post.description">
+      <h2 class="post-card__title" v-html="post.title" v-if="post.title" />
       <p class="post-card__description" v-html="post.description" />
-      <g-link class="post-card__link" :to="post.path">Link</g-link>
+      <g-link v-if="post.description" class="post-card__link" :to="post.path">Link</g-link>
     </div>
   </div>
 </template>
@@ -28,18 +37,22 @@ export default {
 </script>
 
 <style lang="scss">
+iframe {
+  margin-bottom: -5px;
+}
+
 .post-card {
   margin-bottom: var(--space);
   position: relative;
   // border: 1px solid var(--link-color);
 
   &__header {
-    margin-left: calc(var(--space) * -1);
-    margin-right: calc(var(--space) * -1);
-    margin-bottom: calc(var(--space) * 0.75);
-    margin-top: calc(var(--space) * -1);
+    // margin-left: calc(var(--space) * -1);
+    // margin-right: calc(var(--space) * -1);
+    // margin-bottom: calc(var(--space) * 0.75);
+    // margin-top: calc(var(--space) * -1);
     overflow: hidden;
-    border-radius: var(--radius) var(--radius) 0 0;
+    // border-radius: var(--radius) var(--radius) 0 0;
 
     &:empty {
       display: none;
@@ -55,7 +68,7 @@ export default {
     margin-top: 0;
   }
 
-  &:hover {
+  &--has-content:hover {
     transform: scale(1.02);
     box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.1);
   }
@@ -74,6 +87,10 @@ export default {
 
   &__description {
     margin-bottom: 0;
+  }
+
+  &__content {
+    padding: var(--space);
   }
 }
 </style>

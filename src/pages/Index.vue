@@ -1,7 +1,5 @@
 <template>
   <Layout :show-logo="false">
-    <Title :show-title="true" />
-
     <div class="posts">
       <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
     </div>
@@ -20,6 +18,7 @@ query {
         description
         cover_image (width: 770, height: 380, blur: 10)
         path
+        video_url
       }
     }
   }
