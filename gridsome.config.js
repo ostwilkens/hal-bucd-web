@@ -6,8 +6,7 @@
 
 module.exports = {
   siteName: 'hal_bucd',
-  siteUrl: 'https://hal-bucd.net',
-  pathPrefix: '',
+  siteUrl: 'hal-bucd.net',
   siteDescription: 'hal_bucd',
 
   templates: {
